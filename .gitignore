@@ -1,0 +1,8 @@
+.idea
+*.iml
+*.tmp.*
+.sourcemaps
+tmp
+www
+dist
+node_modules

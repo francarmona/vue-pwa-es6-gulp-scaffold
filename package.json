@@ -1,0 +1,21 @@
+{
+  "name": "pwa-es6-gulp-scaffold",
+  "version": "1.0.0",
+  "description": "Scaffold for Progressive Web App with ES6 and Gulp",
+  "main": "gulpfile.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "PWA Scaffold",
+    "Progressive Web App Scaffold",
+    "ES6",
+    "Gulp",
+    "Web Scaffold"
+  ],
+  "author": "Francisco José Carmona Olmedo",
+  "license": "ISC"
+}
