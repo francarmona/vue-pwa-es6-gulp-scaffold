@@ -4,8 +4,10 @@ let gulp = require('gulp'),
     browserify = require('browserify'),
     watchify = require('watchify'),
     noop = require('gulp-noop'),
-    uglify = require('gulp-uglify');
-
+    uglify = require('gulp-uglify'),
+    sourcemaps = require('gulp-sourcemaps'),
+    source = require('vinyl-source-stream'),
+    buffer = require('vinyl-buffer');
 
 const defaultOptions = {
   src: ['./src/app/js/index.js'],
@@ -29,17 +31,11 @@ const defaultOptions = {
   uglify: {}
 };
 
-module.exports = function(options){
+module.exports = (options) => {
   options = merge(defaultOptions, options);
   let bundler = browserify(options.src, options.browserify);
 
-  if(options.watch) {
-    bundler = watchify(bundler, options.watchify);
-    bundler.on('update', bundle);
-    bundler.on('log', options.onLog);
-  }
-
-  function bundle() {
+  let bundle = () => {
     const debug = options.browserify.debug;
     bundler.transform(babelify, { presets: ["es2015"] })
       .bundle()
@@ -50,6 +46,12 @@ module.exports = function(options){
       .pipe(options.minify ? uglify(options.uglify) : noop())
       .pipe(debug ? sourcemaps.write('./maps') : noop())
       .pipe(gulp.dest(options.dstPath));
+  };
+
+  if(options.watch) {
+    bundler = watchify(bundler, options.watchify);
+    bundler.on('update', bundle);
+    bundler.on('log', options.onLog);
   }
 
   return bundle();
