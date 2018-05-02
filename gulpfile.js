@@ -8,11 +8,11 @@ let gulp = require('gulp'),
     plugins = envConfig.plugins,
     getTask = require('./gulp/utils').getTask;
 
-gulp.task('js', getTask('js')(paths.js, plugins, env == 'development' ? true : false));
+gulp.task('js', getTask('js')(paths.js, plugins, env == 'development' ? true : false, browserSync));
 gulp.task('styles', getTask('styles')(paths.styles, plugins));
 gulp.task('html', getTask('html')(paths.html));
 gulp.task('manifest', getTask('manifest')(paths.manifest));
-gulp.task('sw', getTask('sw')(paths.sw, plugins));
+gulp.task('sw', getTask('sw')(paths.sw, plugins, env == 'development' ? true : false, browserSync));
 gulp.task('img', getTask('img')(paths.img, plugins));
 gulp.task('lint', getTask('lint')(paths.js.all));
 gulp.task('browserSyncReload', () => browserSync.reload());

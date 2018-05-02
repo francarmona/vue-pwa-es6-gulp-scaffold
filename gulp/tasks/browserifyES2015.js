@@ -32,7 +32,7 @@ const defaultOptions = {
 };
 
 module.exports = (options) => {
-  options = merge(defaultOptions, options);
+  options = merge({}, defaultOptions, options);
   let bundler = browserify(options.src, options.browserify);
 
   let bundle = () => {
@@ -50,7 +50,12 @@ module.exports = (options) => {
 
   if(options.watch) {
     bundler = watchify(bundler, options.watchify);
-    bundler.on('update', bundle);
+    bundler.on('update', () => {
+      bundle();
+      if(options.browserSync){
+        options.browserSync.reload();
+      }
+    });
     bundler.on('log', options.onLog);
   }
 
