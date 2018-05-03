@@ -13,6 +13,10 @@ module.exports = {
         src: './src/app/scss/**/*.scss',
         dst: './www/css'
       },
+      fonts: {
+        materialIconsSrc: './node_modules/material-design-icons/iconfont/MaterialIcons-Regular.*',
+        dst: './www/fonts'
+      },
       js: {
         all: './src/app/js/**/*.js',
         src: './src/app/js/index.js',
@@ -56,6 +60,10 @@ module.exports = {
       styles: {
         src: './src/app/scss/**/*.scss',
         dst: './dist/css'
+      },
+      fonts: {
+        materialIconsSrc: './node_modules/material-design-icons-iconfont/fonts/MaterialIcons-Regular.*',
+        dst: './dist/fonts'
       },
       js: {
         all: './src/app/js/**/*.js',

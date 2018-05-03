@@ -1,0 +1,35 @@
+
+$material-design-icons-font-path: '../fonts/';
+@import '../../../node_modules/material-design-icons-iconfont/dist/material-design-icons.scss';
+@import 'theme/variables.scss';
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: Roboto, Helvetica, Sans-serif;
+  background-color: #fdfdfd;
+  margin: 0;
+  position: relative;
+  color: #333;
+  line-height: 1.5;
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav-bar {
+  margin: 0;
+  padding: 0;
+  display: inline;
+  li {
+    display: inline;
+  }
+}
+
+.nav-bar-right {
+  @extend .nav-bar;
+  float: right;
+}
