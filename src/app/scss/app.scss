@@ -5,16 +5,16 @@ $material-design-icons-font-path: '../fonts/';
 @import 'functions.scss';
 
 html {
-  font-size: 16px;
+  font-size: $font-size-base;
 }
 
 body {
-  font-family: Roboto, Helvetica, Sans-serif;
-  background-color: #fdfdfd;
+  font-family: $font-family;
+  background-color: $body-bg;
   margin: 0;
   position: relative;
-  color: #333;
-  line-height: 1.5;
+  color: $text-color;
+  line-height: $line-height-base;
 }
 
 a {
@@ -27,7 +27,7 @@ a {
 
 header {
   nav {
-    padding: 10px;
+    padding: $padding-horizontal-base;
     height: 80px;
     background-color: color($colors, 'primary');
     .nav-bar {
