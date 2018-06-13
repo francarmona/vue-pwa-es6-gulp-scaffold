@@ -7,7 +7,9 @@ let gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     sourcemaps = require('gulp-sourcemaps'),
     source = require('vinyl-source-stream'),
-    buffer = require('vinyl-buffer');
+    buffer = require('vinyl-buffer'),
+    vueify = require ('vueify'),
+    hmr = require('browserify-hmr');
 
 const defaultOptions = {
   src: ['./src/app/js/index.js'],
@@ -37,8 +39,7 @@ module.exports = (options) => {
 
   let bundle = () => {
     const debug = options.browserify.debug;
-    bundler.transform(babelify, { presets: ["es2015"] })
-      .bundle()
+    bundler.bundle()
       .on('error', options.onError)
       .pipe(source(options.dstFile))
       .pipe(buffer())
@@ -49,15 +50,8 @@ module.exports = (options) => {
   };
 
   if(options.watch) {
-    bundler = watchify(bundler, options.watchify);
-    bundler.on('update', () => {
-      bundle();
-      if(options.browserSync){
-        options.browserSync.reload();
-      }
-    });
+    bundler.on('update', bundle);
     bundler.on('log', options.onLog);
   }
-
   return bundle();
 };

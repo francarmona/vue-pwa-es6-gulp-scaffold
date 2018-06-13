@@ -1,6 +1,9 @@
 let pngquant = require('imagemin-pngquant'),
     imageminMozjpeg = require('imagemin-mozjpeg'),
-    watchify = require('watchify');
+    watchify = require('watchify'),
+    vueify = require ('vueify'),
+    hmr = require('browserify-hmr'),
+    babelify = require('babelify');
 
 module.exports = {
   development: {
@@ -37,6 +40,8 @@ module.exports = {
     },
     plugins: {
       browserify: {
+        plugin: [hmr, watchify],
+        transform: [vueify, babelify],
         cache: {},
         packageCache: {},
         debug: true
