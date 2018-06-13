@@ -21,8 +21,8 @@ module.exports = {
         dst: './www/fonts'
       },
       js: {
-        all: './src/app/js/**/*.js',
-        src: './src/app/js/index.js',
+        all: './src/app/**/*.js',
+        src: './src/app/index.js',
         dst: './www/js'
       },
       manifest: {
@@ -71,8 +71,8 @@ module.exports = {
         dst: './dist/fonts'
       },
       js: {
-        all: './src/app/js/**/*.js',
-        src: './src/app/js/index.js',
+        all: './src/app/**/*.js',
+        src: './src/app/index.js',
         dst: './dist/js'
       },
       manifest: {
