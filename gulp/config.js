@@ -3,7 +3,8 @@ let pngquant = require('imagemin-pngquant'),
     watchify = require('watchify'),
     vueify = require ('vueify'),
     hmr = require('browserify-hmr'),
-    babelify = require('babelify');
+    babelify = require('babelify'),
+    envify = require('envify');
 
 module.exports = {
   development: {
@@ -90,7 +91,7 @@ module.exports = {
     },
     plugins: {
       browserify: {
-        transform: [vueify, babelify],
+        transform: [vueify, babelify, [envify, { NODE_ENV: 'production', global: true }]],
         cache: {},
         packageCache: {},
         debug: false
