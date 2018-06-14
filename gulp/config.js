@@ -13,7 +13,7 @@ module.exports = {
         dst: './www'
       },
       styles: {
-        src: './src/app/scss/**/*.scss',
+        src: './src/app/scss/app.scss',
         dst: './www/css'
       },
       fonts: {
@@ -63,7 +63,7 @@ module.exports = {
         dst: './dist'
       },
       styles: {
-        src: './src/app/scss/**/*.scss',
+        src: './src/app/scss/app.scss',
         dst: './dist/css'
       },
       fonts: {
@@ -90,6 +90,7 @@ module.exports = {
     },
     plugins: {
       browserify: {
+        transform: [vueify, babelify],
         cache: {},
         packageCache: {},
         debug: false

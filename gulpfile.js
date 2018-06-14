@@ -8,7 +8,7 @@ let gulp = require('gulp'),
     plugins = envConfig.plugins,
     getTask = require('./gulp/utils').getTask;
 
-gulp.task('js', getTask('js')(paths.js, plugins, env == 'development' ? true : false, browserSync));
+gulp.task('js', getTask('js')(paths.js, plugins, env == 'development' ? true : false, browserSync, env == 'production' ? true : false));
 gulp.task('styles', getTask('styles')(paths.styles, plugins));
 gulp.task('fonts', getTask('fonts')(paths.fonts));
 gulp.task('html', getTask('html')(paths.html));
