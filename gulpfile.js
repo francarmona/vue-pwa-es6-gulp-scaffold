@@ -25,6 +25,6 @@ gulp.task('serve', ['lint', 'build'], () => {
     server: './www'
   });
   gulp.watch(paths.js.all, ['lint']);
-  // gulp.watch(paths.html.src, ['html', 'browserSyncReload']);
-  // gulp.watch(paths.styles.src, ['styles', 'browserSyncReload']);
+  gulp.watch(paths.html.src, ['html', 'browserSyncReload']);
+  gulp.watch(paths.styles.watchSrc, ['styles', 'browserSyncReload']);
 });

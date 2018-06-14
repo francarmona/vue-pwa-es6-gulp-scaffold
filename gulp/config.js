@@ -15,6 +15,7 @@ module.exports = {
       },
       styles: {
         src: './src/app/scss/app.scss',
+        watchSrc: './src/app/scss/**/*.scss',
         dst: './www/css'
       },
       fonts: {
