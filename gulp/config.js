@@ -48,6 +48,12 @@ module.exports = {
         packageCache: {},
         debug: true
       },
+      browserifySw: {
+        transform: [babelify],
+        cache: {},
+        packageCache: {},
+        debug: true
+      },
       sass: {},
       imagemin: [
         pngquant(),
