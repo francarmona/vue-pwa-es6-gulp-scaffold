@@ -13,7 +13,7 @@ gulp.task('styles', getTask('styles')(paths.styles, plugins));
 gulp.task('fonts', getTask('fonts')(paths.fonts));
 gulp.task('html', getTask('html')(paths.html));
 gulp.task('manifest', getTask('manifest')(paths.manifest));
-gulp.task('sw', getTask('sw')(paths.sw, plugins, env == 'development' ? true : false, browserSync));
+gulp.task('sw', getTask('sw')(paths.sw, plugins));
 gulp.task('img', getTask('img')(paths.img, plugins));
 gulp.task('lint', getTask('lint')(paths.js.all));
 gulp.task('browserSyncReload', () => browserSync.reload());
