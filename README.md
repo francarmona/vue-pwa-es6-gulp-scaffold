@@ -1,5 +1,4 @@
 # Vue Progressive Web Application scaffold
----
 
 > A Vue scaffold for building progressive web apps out of the box.
 
