@@ -26,10 +26,8 @@ a {
 }
 
 header {
+  background-color: color($colors, 'primary');
   nav {
-    padding: $padding-horizontal-base;
-    height: 80px;
-    background-color: color($colors, 'primary');
     .nav-bar {
       margin: 0;
       padding: 0;
@@ -44,4 +42,9 @@ header {
       float: right;
     }
   }
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
 }

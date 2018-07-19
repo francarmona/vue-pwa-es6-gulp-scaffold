@@ -1,6 +1,8 @@
 <template>
   <main>
-    Main
+    <div class="container">
+      Main
+    </div>
   </main>
 </template>
 
