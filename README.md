@@ -37,3 +37,4 @@ Then, open [http://localhost:8000](http://localhost:8000/)
 # Serve with hot reload at localhost:3000
 gulp serve
 ```
+It is required to mark the checkbox **"Bypass for network"** in Google Chrome developer tools in order to make Browsersync work correctly with service workers. (Tab application -> Service Workers)
