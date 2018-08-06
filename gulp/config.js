@@ -19,7 +19,7 @@ module.exports = {
         dst: './www/css'
       },
       fonts: {
-        materialIconsSrc: './node_modules/material-design-icons/iconfont/MaterialIcons-Regular.*',
+        materialIconsSrc: './node_modules/material-design-icons-iconfont/dist/fonts/MaterialIcons-Regular.*',
         dst: './www/fonts'
       },
       js: {

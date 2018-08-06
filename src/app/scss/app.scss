@@ -27,14 +27,20 @@ a {
 
 header {
   box-shadow: 0 0 1px rgba(0,0,0,0.25);
+  .menu-toggle {
+    display: none;
+  }
   nav {
     padding: $padding-vertical-base 0;
-    ul {
+    .nav-bar {
+      margin: 0;
+      padding: 0;
       li {
+        display: inline;
+        padding: 0 3rem 0;
         a {
           cursor: pointer;
         }
-        padding: 0 3rem 0;
         &.selected {
           border-bottom: 3px solid color($colors, 'primary');
           padding-bottom: $padding-vertical-base;
@@ -42,13 +48,6 @@ header {
             color: color($colors, 'primary');
           }
         }
-      }
-    }
-    .nav-bar {
-      margin: 0;
-      padding: 0;
-      li {
-        display: inline;
       }
     }
 
@@ -62,4 +61,49 @@ header {
 .container {
   max-width: 1200px;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 549px) {
+  header {
+    .menu-toggle {
+      display: block;
+      position: absolute;
+      font-size: 2.1rem;
+      top: $padding-vertical-base;
+      left: $padding-horizontal-base;
+    }
+    nav {
+      width: 300px;
+      background-color: white;
+      margin-top: 1px;
+      position: absolute;
+      transform: translate(-300px, 0);
+      -webkit-transform: translate(-300px, 0);
+      transition: transform 0.3s ease;
+      &.open {
+        transform: translate(0, 0);
+        -webkit-transform: translate(0, 0);
+      }
+      .nav-bar {
+        margin: 0;
+        padding: 0;
+        li {
+          padding: 0;
+          text-align: left;
+          a {
+            display: block;
+            padding: 10px 15px;
+          }
+          display: list-item;
+          &.selected {
+            border-bottom: none;
+            padding-bottom: 0;
+            a {
+              color: color($colors, 'primary');
+            }
+          }
+        }
+      }
+    }
+  }
 }

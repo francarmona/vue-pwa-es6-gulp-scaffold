@@ -1,6 +1,7 @@
-let gulp = require('gulp');
+let copy = require('./copy');
 
 module.exports = (paths) => {
-  return () => gulp.src(paths.materialIconsSrc)
-    .pipe(gulp.dest(paths.dst));
+  return () => {
+    return copy(paths.materialIconsSrc, paths.dst);
+  }
 };

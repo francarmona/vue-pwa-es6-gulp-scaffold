@@ -2,10 +2,11 @@
   <header>
     <div class="container">
       <div class="brand">Vue PWA Scaffold</div>
-      <nav role="navigation">
+      <i v-on:click="sideNavOpened = !sideNavOpened" class="material-icons menu-toggle">menu</i>
+      <nav role="navigation" v-bind:class="{ open: sideNavOpened }">
         <ul class="nav-bar">
-          <li v-for="page in pages" v-bind:class="{ selected: selected == page.id }">
-            <a v-on:click.stop="selected = page.id">{{ page.text }}</a>
+          <li v-for="page in pages" v-bind:class="{ selected: pageSelected == page.id }">
+            <a v-on:click.stop="pageSelected = page.id">{{ page.text }}</a>
           </li>
         </ul>
       </nav>
@@ -23,7 +24,8 @@ export default {
         { id: 'page1', text: 'Page 1'},
         { id: 'page2', text: 'Page 2'}
       ],
-      selected: undefined
+      pageSelected: undefined,
+      sideNavOpened: false
     }
   }
 }
@@ -34,7 +36,6 @@ export default {
   .brand {
     text-align: center;
     padding: $padding-vertical-base 0 $padding-vertical-base 0;
-    text-align: center;
     letter-spacing: 0.8px;
     color: color($colors, 'primary');
     font-size: 1.4rem;
