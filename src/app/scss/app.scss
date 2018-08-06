@@ -19,19 +19,34 @@ body {
 
 a {
   text-decoration: none;
-  color: white;
+  color: $text-color;
   &:hover {
-    color: darken(white, 10%);
+    color: darken(color($colors, 'primary'), 10%);
   }
 }
 
 header {
-  background-color: color($colors, 'primary');
+  box-shadow: 0 0 1px rgba(0,0,0,0.25);
   nav {
+    padding: $padding-vertical-base 0;
+    ul {
+      li {
+        a {
+          cursor: pointer;
+        }
+        padding: 0 3rem 0;
+        &.selected {
+          border-bottom: 3px solid color($colors, 'primary');
+          padding-bottom: $padding-vertical-base;
+          a {
+            color: color($colors, 'primary');
+          }
+        }
+      }
+    }
     .nav-bar {
       margin: 0;
       padding: 0;
-      display: inline;
       li {
         display: inline;
       }
