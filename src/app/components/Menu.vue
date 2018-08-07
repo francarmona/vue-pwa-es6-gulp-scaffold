@@ -1,14 +1,15 @@
 <template>
   <nav role="navigation" v-bind:class="{ open: sideNavOpened }">
     <ul class="nav-bar">
-      <li v-for="page in pages" v-bind:class="{ selected: pageSelected == page.id }">
-        <a v-on:click.stop="pageSelected = page.id">{{ page.text }}</a>
+      <li v-for="page in pages" v-bind:class="{ selected: currentPage.id == page.id }">
+        <a v-on:click.stop="$store.commit(setCurrentPageMutationType, page)">{{ page.text }}</a>
       </li>
     </ul>
   </nav>
 </template>
 
 <script>
+import { SET_CURRENT_PAGE } from '../store';
 export default {
   name: 'Menu',
   data () {
@@ -18,20 +19,17 @@ export default {
         { id: 'page1', text: 'Page 1'},
         { id: 'page2', text: 'Page 2'}
       ],
-      pageSelected: undefined,
-      sideNavOpened: false
+      setCurrentPageMutationType: SET_CURRENT_PAGE
     }
   },
-  methods: {
-    toggle() {
-      this.sideNavOpened = !this.sideNavOpened;
+  computed: {
+    sideNavOpened() {
+      return this.$store.state.navigation.sideNav.opened;
+    },
+    currentPage() {
+      return this.$store.state.navigation.currentPage;
     }
   },
-  mounted () {
-    this.$parent.$on('toggle-side-nav', () => {
-      this.toggle();
-    })
-  }
 }
 </script>
 
@@ -68,8 +66,8 @@ export default {
   @media screen and (max-width: 549px) {
     nav {
       width: 300px;
-      background-color: white;
-      margin-top: 1px;
+      background-color: #fbfbfb;
+      border: 1px solid #eee;
       position: absolute;
       transform: translate(-300px, 0);
       -webkit-transform: translate(-300px, 0);

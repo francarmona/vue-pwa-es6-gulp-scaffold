@@ -3,16 +3,14 @@
 </template>
 
 <script>
+
+import { TOGGLE_SIDE_NAV } from '../store';
+
 export default {
   name: 'MenuToggle',
-  data () {
-    return {
-      sideNavOpened: false
-    }
-  },
   methods: {
     toggleSideNav() {
-      this.$parent.$emit('toggle-side-nav');
+      this.$store.commit(TOGGLE_SIDE_NAV);
     }
   }
 }
