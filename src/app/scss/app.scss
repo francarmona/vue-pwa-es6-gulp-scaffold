@@ -6,15 +6,21 @@ $material-design-icons-font-path: '../fonts/';
 
 html {
   font-size: $font-size-base;
+  height: 100%;
 }
 
 body {
+  height: 100%;
   font-family: $font-family;
   background-color: $body-bg;
   margin: 0;
   position: relative;
   color: $text-color;
   line-height: $line-height-base;
+}
+
+#app {
+  height: 100%;
 }
 
 a {

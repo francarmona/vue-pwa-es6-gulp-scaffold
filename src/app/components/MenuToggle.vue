@@ -1,5 +1,5 @@
 <template>
-  <i v-on:click="toggleSideNav" class="material-icons menu-toggle">menu</i>
+  <i v-on:click.stop="toggleSideNav" class="material-icons menu-toggle">menu</i>
 </template>
 
 <script>

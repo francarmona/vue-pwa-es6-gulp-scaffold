@@ -1,14 +1,12 @@
 <template>
-  <main>
-    <div class="container">
-      Main
-    </div>
-  </main>
+  <div class="container">
+    Page 2
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'Main'
+  name: 'Page2'
 }
 </script>
 

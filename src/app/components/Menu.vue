@@ -1,33 +1,20 @@
 <template>
   <nav role="navigation" v-bind:class="{ open: sideNavOpened }">
     <ul class="nav-bar">
-      <li v-for="page in pages" v-bind:class="{ selected: currentPage.id == page.id }">
-        <a v-on:click.stop="$store.commit(setCurrentPageMutationType, page)">{{ page.text }}</a>
-      </li>
+      <router-link v-for="route in this.$router.options.routes" tag="li" v-bind:to="route.path">
+        <a>{{ route.name }}</a>
+      </router-link>
     </ul>
   </nav>
 </template>
 
 <script>
-import { SET_CURRENT_PAGE } from '../store';
+
 export default {
   name: 'Menu',
-  data () {
-    return {
-      pages: [
-        { id: 'home', text: 'Home'},
-        { id: 'page1', text: 'Page 1'},
-        { id: 'page2', text: 'Page 2'}
-      ],
-      setCurrentPageMutationType: SET_CURRENT_PAGE
-    }
-  },
   computed: {
     sideNavOpened() {
       return this.$store.state.navigation.sideNav.opened;
-    },
-    currentPage() {
-      return this.$store.state.navigation.currentPage;
     }
   },
 }
@@ -48,7 +35,7 @@ export default {
         a {
           cursor: pointer;
         }
-        &.selected {
+        &.router-link-exact-active {
           border-bottom: 3px solid color($colors, 'primary');
           padding-bottom: $padding-vertical-base;
           a {
@@ -87,7 +74,7 @@ export default {
             padding: 10px 15px;
           }
           display: list-item;
-          &.selected {
+          &.router-link-exact-active {
             border-bottom: none;
             padding-bottom: 0;
           }
