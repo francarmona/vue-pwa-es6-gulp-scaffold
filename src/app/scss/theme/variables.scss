@@ -1,18 +1,24 @@
 $body-bg: #fdfdfd;
 $text-color: #333;
 
+$sm-breakpoint: 549px;
+$md-breakpoint: 800px;
+$lg-breakpoint: 1000px;
+
 //Typography
-$font-family: Roboto, Helvetica, Sans-serif;
+$font-family: 'Montserrat', sans-seriff;
 $font-size-base: 16px;
 
 $line-height-base: 1.5;
 $padding-horizontal-base: 10px;
 $padding-vertical-base: 10px;
 
+$header-height: 53px;
+
 //Colors
 $colors: (
-  primary: #4477cd,
-  secondary:  #ffcf79,
+  primary:    #16bac5,
+  secondary:  #63c7b2,
   danger:     #f53d3d,
   light:      #f4f4f4,
   dark:       #222,

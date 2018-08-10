@@ -8,12 +8,12 @@ let gulp = require('gulp'),
     plugins = envConfig.plugins,
     getTask = require('./gulp/utils').getTask;
 
-gulp.task('js', getTask('js')(paths.js, plugins, env == 'development' ? true : false, browserSync));
+gulp.task('js', getTask('js')(paths.js, plugins, env == 'development' ? true : false, browserSync, env == 'production' ? true : false));
 gulp.task('styles', getTask('styles')(paths.styles, plugins));
 gulp.task('fonts', getTask('fonts')(paths.fonts));
 gulp.task('html', getTask('html')(paths.html));
 gulp.task('manifest', getTask('manifest')(paths.manifest));
-gulp.task('sw', getTask('sw')(paths.sw, plugins, env == 'development' ? true : false, browserSync));
+gulp.task('sw', getTask('sw')(paths.sw, plugins));
 gulp.task('img', getTask('img')(paths.img, plugins));
 gulp.task('lint', getTask('lint')(paths.js.all));
 gulp.task('browserSyncReload', () => browserSync.reload());
@@ -26,5 +26,5 @@ gulp.task('serve', ['lint', 'build'], () => {
   });
   gulp.watch(paths.js.all, ['lint']);
   gulp.watch(paths.html.src, ['html', 'browserSyncReload']);
-  gulp.watch(paths.styles.src, ['styles', 'browserSyncReload']);
+  gulp.watch(paths.styles.watchSrc, ['styles', 'browserSyncReload']);
 });
