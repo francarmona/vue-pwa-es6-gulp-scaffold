@@ -1,5 +1,7 @@
 # Vue Progressive Web Application scaffold
 
+[![Build Status](https://travis-ci.org/francarmona/vue-pwa-es6-gulp-scaffold.svg?branch=master)](https://travis-ci.org/francarmona/vue-pwa-es6-gulp-scaffold)
+
 > A Vue scaffold for building progressive web apps out of the box.
 
 ## Out of the box
