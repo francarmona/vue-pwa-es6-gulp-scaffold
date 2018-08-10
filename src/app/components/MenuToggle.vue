@@ -21,7 +21,7 @@ export default {
   .menu-toggle {
     display: none;
   }
-  @media screen and (max-width: 549px) {
+  @media screen and (max-width: $sm-breakpoint) {
     .menu-toggle {
       display: block;
       position: absolute;

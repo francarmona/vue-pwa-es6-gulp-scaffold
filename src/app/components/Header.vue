@@ -26,4 +26,13 @@ export default {
     color: color($colors, 'primary');
     font-size: 1.4rem;
   }
+
+  @media screen and (max-width: $sm-breakpoint) {
+    header {
+      height: $header-height;
+    }
+    .brand {
+      height: $header-height;
+    }
+  }
 </style>
