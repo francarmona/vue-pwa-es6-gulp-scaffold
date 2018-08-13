@@ -75,7 +75,7 @@ module.exports = {
         dst: './dist/css'
       },
       fonts: {
-        materialIconsSrc: './node_modules/material-design-icons-iconfont/fonts/MaterialIcons-Regular.*',
+        materialIconsSrc: './node_modules/material-design-icons-iconfont/dist/fonts/MaterialIcons-Regular.*',
         dst: './dist/fonts'
       },
       js: {

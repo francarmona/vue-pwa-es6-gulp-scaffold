@@ -1,0 +1,36 @@
+{
+  "name": "Vue PWA Scaffold",
+  "short_name": "RVue PWA Scaffold",
+  "description": "",
+  "display": "standalone",
+  "background_color": "#f3f3f3",
+  "theme_color": "#16bac5",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/img/icon.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "/img/icon-2x.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "/img/icon-3x.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "/img/icon-4x.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/img/icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}

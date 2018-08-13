@@ -4,13 +4,13 @@
 
 <script>
 
-import { TOGGLE_SIDE_NAV } from '../store';
+import { MUTATION_TYPES } from '../store/types';
 
 export default {
   name: 'MenuToggle',
   methods: {
     toggleSideNav() {
-      this.$store.commit(TOGGLE_SIDE_NAV);
+      this.$store.commit(MUTATION_TYPES.TOGGLE_SIDE_NAV);
     }
   }
 }

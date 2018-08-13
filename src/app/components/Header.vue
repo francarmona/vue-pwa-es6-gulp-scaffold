@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import Menu from "./Menu.vue";
-import MenuToggle from "./MenuToggle.vue";
+import Menu from './Menu.vue';
+import MenuToggle from './MenuToggle.vue';
 export default {
   name: 'Header',
   components: {MenuToggle, Menu}

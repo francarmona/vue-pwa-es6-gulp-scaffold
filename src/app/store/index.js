@@ -1,10 +1,9 @@
 
 import Vue from 'vue';
 import Vuex from 'vuex';
+import mutations from './mutations';
 
 Vue.use(Vuex);
-
-export const TOGGLE_SIDE_NAV = 'TOGGLE_SIDE_NAV';
 
 export default new Vuex.Store({
   state: {
@@ -14,9 +13,5 @@ export default new Vuex.Store({
       }
     }
   },
-  mutations: {
-    [TOGGLE_SIDE_NAV](state) {
-      state.navigation.sideNav.opened = !state.navigation.sideNav.opened;
-    }
-  }
+  mutations
 });

@@ -1,3 +1,19 @@
 language: node_js
 node_js:
   - "10"
+branches:
+  only:
+  - master
+jobs:
+  include:
+    - stage: Test
+      script:
+        - npm test
+    - stage: Deploy
+      before_script:
+        - npm install -g firebase-tools gulp-cli
+      script:
+        - gulp --env production build
+      after_success:
+        - firebase deploy --token $FIREBASE_TOKEN
+

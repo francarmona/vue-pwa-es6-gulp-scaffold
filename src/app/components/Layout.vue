@@ -11,7 +11,7 @@
 <script>
 import Header from './Header.vue';
 import Footer from './Footer.vue';
-import { TOGGLE_SIDE_NAV } from "../store";
+import { MUTATION_TYPES } from '../store/types';
 
 export default {
   name: 'Layout',
@@ -22,7 +22,7 @@ export default {
   methods: {
     toggleSideNav() {
       if(this.$store.state.navigation.sideNav.opened) {
-        this.$store.commit(TOGGLE_SIDE_NAV);
+        this.$store.commit(MUTATION_TYPES.TOGGLE_SIDE_NAV);
       }
     }
   }

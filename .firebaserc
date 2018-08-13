@@ -1,0 +1,5 @@
+{
+  "projects": {
+    "prod": "pwa-es6-gulp-scaffold"
+  }
+}
