@@ -17,7 +17,8 @@
 * Hot reloading (HMR).
 * Fully responsive.
 * Add to home screen feature (manifest.json).
-* Heroku deployment.
+* Travis CI integration.
+* Firebase deployment.
 
 ##Run
 ```shell
