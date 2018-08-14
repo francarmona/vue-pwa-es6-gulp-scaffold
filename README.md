@@ -13,6 +13,7 @@
 * Offline first web app.
 * Build with Gulp.
 * Linting.
+* Unit testing with Vue Test Utils.
 * Image optimization.
 * Hot reloading (HMR).
 * Fully responsive.
