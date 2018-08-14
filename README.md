@@ -5,9 +5,9 @@
 
 > A Vue scaffold for building progressive web apps out of the box.
 
-###[Live demo](https://pwa-es6-gulp-scaffold.firebaseapp.com)
+### [Live demo](https://pwa-es6-gulp-scaffold.firebaseapp.com)
 
-##Out of the box
+## Out of the box
 
 * Vue.js 2.
 * Offline first web app.
@@ -21,12 +21,12 @@
 * Travis CI integration.
 * Firebase deployment.
 
-##Run
+## Run
 ```shell
 # Install dependencies
 npm install
 ```
-##Production
+## Production
 ```shell
 # Build for production
 gulp --env production build
@@ -39,13 +39,13 @@ python3 -m http.server 8000
 ```
 Then, open [http://localhost:8000](http://localhost:8000/)
 
-##Development
+## Development
 ```shell
 # Serve with hot reload at localhost:3000
 gulp serve
 ```
 It is required to mark the checkbox **"Bypass for network"** in Google Chrome developer tools in order to make Browsersync work correctly with service workers. (Tab application -> Service Workers)
 
-##License
+## License
 
 [The MIT License](http://opensource.org/licenses/MIT)
