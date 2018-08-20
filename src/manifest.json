@@ -1,6 +1,6 @@
 {
   "name": "Vue PWA Scaffold",
-  "short_name": "RVue PWA Scaffold",
+  "short_name": "Vue PWA Scaffold",
   "description": "",
   "display": "standalone",
   "background_color": "#f3f3f3",

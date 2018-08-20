@@ -31,13 +31,17 @@ module.exports = {
         src: './src/manifest.json',
         dst: './www'
       },
+      favicon: {
+        src: './src/favicon.ico',
+        dst: './www'
+      },
       sw: {
         src: './src/service-worker.js',
         dst: './www'
       },
       img: {
         src: './src/assets/img/**/*.{gif,jpg,jpeg,png,svg}',
-        dst: './www/assets/img'
+        dst: './www/img'
       }
     },
     plugins: {
@@ -87,13 +91,17 @@ module.exports = {
         src: './src/manifest.json',
         dst: './dist'
       },
+      favicon: {
+        src: './src/favicon.ico',
+        dst: './dist'
+      },
       sw: {
         src: './src/service-worker.js',
         dst: './dist'
       },
       img: {
         src: './src/assets/img/**/*.{gif,jpg,jpeg,png,svg}',
-        dst: './dist/assets/img'
+        dst: './dist/img'
       }
     },
     plugins: {

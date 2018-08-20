@@ -2,7 +2,7 @@
   <div class="container">
     <section>
       <h1>The Progressive JavaScript Framework</h1>
-      <img src="assets/img/vuejs.png" alt="Vuejs logo">
+      <lazy-image src="img/vuejs.png" alt="Vuejs"></lazy-image>
       <div class="row top-marged">
         <div class="col-sm-12 col-md-4 text-center">
           <div class="bold">Approachable</div>
@@ -22,8 +22,10 @@
 </template>
 
 <script>
+import LazyImage from "../LazyImage.vue";
 export default {
-  name: 'VueJs'
+  name: 'VueJs',
+  components: {LazyImage}
 }
 </script>
 

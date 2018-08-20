@@ -27,8 +27,8 @@
       <div class="detail">
         <div class="row top-marged bottom-marged">
           <div class="col-sm-12 col-md-6">
-            <img src="assets/img/pwa-reliable.png" srcset="assets/img/pwa-reliable.png 1x,
-                  assets/img/pwa-reliable.png 2x">
+            <lazy-image src="img/pwa-reliable.png" srcset="img/pwa-reliable.png 1x,
+                  img/pwa-reliable.png 2x" alt="pwa reliable"></lazy-image>
           </div>
           <div class="col-sm-12 col-md-6 right-padded">
             <h3>Reliable</h3>
@@ -42,14 +42,14 @@
             <p>53% of users will abandon a site if it takes longer than 3 seconds to load! And once loaded, users expect them to be fast—no janky scrolling or slow-to-respond interfaces.</p>
           </div>
           <div class="col-sm-12 col-md-6">
-            <img src="assets/img/pwa-fast.png" srcset="assets/img/pwa-fast.png 1x,
-                  assets/img/pwa-fast.png 2x">
+            <lazy-image src="img/pwa-fast.png" srcset="img/pwa-fast.png 1x,
+                  img/pwa-fast.png 2x" alt="pwa fast"></lazy-image>
           </div>
         </div>
         <div class="row top-marged">
           <div class="col-sm-12 col-md-6">
-            <img src="assets/img/pwa-engaging.png" srcset="assets/img/pwa-engaging.png 1x,
-                  assets/img/pwa-engaging.png 2x">
+            <lazy-image src="img/pwa-engaging.png" srcset="assets/img/pwa-engaging.png 1x,
+                  img/pwa-engaging.png 2x" alt="pwa engaging"></lazy-image>
           </div>
           <div class="col-sm-12 col-md-6">
             <h3>Engaging</h3>
@@ -63,8 +63,10 @@
 </template>
 
 <script>
+import LazyImage from "../LazyImage.vue";
 export default {
-  name: 'PWA'
+  name: 'PWA',
+  components: {LazyImage}
 }
 </script>
 

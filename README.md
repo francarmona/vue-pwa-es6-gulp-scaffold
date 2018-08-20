@@ -11,13 +11,14 @@
 
 * Vue.js 2.
 * Offline first web app.
+* Lazy loading images.
 * Build with Gulp.
 * Linting.
 * Unit testing with Vue Test Utils.
 * Image optimization.
-* Hot reloading (HMR).
 * Fully responsive.
 * Add to home screen feature (manifest.json).
+* Hot reloading (HMR).
 * Travis CI integration.
 * Firebase deployment.
 
