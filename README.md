@@ -1,7 +1,9 @@
-# Vue Progressive Web Application scaffold
+<p align="center">
+<img src="https://github.com/francarmona/vue-pwa-es6-gulp-scaffold/blob/master/src/assets/img/vue-pwa-scaffold-banner.png" alt="vue pwa scaffold banner" />
+</p>
 
-[![Build Status](https://travis-ci.org/francarmona/vue-pwa-es6-gulp-scaffold.svg?branch=master)](https://travis-ci.org/francarmona/vue-pwa-es6-gulp-scaffold)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+ [![Build Status](https://travis-ci.org/francarmona/vue-pwa-es6-gulp-scaffold.svg?branch=master)](https://travis-ci.org/francarmona/vue-pwa-es6-gulp-scaffold)
+ [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 > A Vue scaffold for building progressive web apps out of the box.
 
@@ -22,12 +24,12 @@
 * Travis CI integration.
 * Firebase deployment.
 
-## Run
+## Quick start
 ```shell
 # Install dependencies
 npm install
 ```
-## Production
+### Production
 ```shell
 # Build for production
 gulp --env production build
@@ -40,7 +42,7 @@ python3 -m http.server 8000
 ```
 Then, open [http://localhost:8000](http://localhost:8000/)
 
-## Development
+### Development
 ```shell
 # Serve with hot reload at localhost:3000
 gulp serve
