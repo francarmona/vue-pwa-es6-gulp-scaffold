@@ -14,7 +14,7 @@
 * Lazy loading images.
 * Build with Gulp.
 * Linting.
-* Unit testing with Vue Test Utils.
+* Unit testing with Vue Test Utils and Jest.
 * Image optimization.
 * Fully responsive.
 * Add to home screen feature (manifest.json).
