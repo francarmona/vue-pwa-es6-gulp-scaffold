@@ -48,7 +48,7 @@
         </div>
         <div class="row top-marged">
           <div class="col-sm-12 col-md-6">
-            <lazy-image src="img/pwa-engaging.png" srcset="assets/img/pwa-engaging.png 1x,
+            <lazy-image src="img/pwa-engaging.png" srcset="img/pwa-engaging.png 1x,
                   img/pwa-engaging.png 2x" alt="pwa engaging"></lazy-image>
           </div>
           <div class="col-sm-12 col-md-6">
