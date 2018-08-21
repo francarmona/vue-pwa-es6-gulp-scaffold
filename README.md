@@ -2,10 +2,14 @@
 <img src="https://github.com/francarmona/vue-pwa-es6-gulp-scaffold/blob/master/src/assets/img/vue-pwa-scaffold-banner.png" alt="vue pwa scaffold banner" />
 </p>
 
- [![Build Status](https://travis-ci.org/francarmona/vue-pwa-es6-gulp-scaffold.svg?branch=master)](https://travis-ci.org/francarmona/vue-pwa-es6-gulp-scaffold)
- [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+<p align="center">
+  <a href="https://travis-ci.org/francarmona/vue-pwa-es6-gulp-scaffold"><img alt="Build Status" src="https://travis-ci.org/francarmona/vue-pwa-es6-gulp-scaffold.svg?branch=master"></a>
+  <a href="http://makeapullrequest.com"><img alt="PRs Welcome" src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square"></a>
+</p>
 
-> A Vue scaffold for building progressive web apps out of the box.
+<p align="center">
+  A Vue scaffold for building progressive web apps out of the box.
+</p>
 
 ### [Live demo](https://pwa-es6-gulp-scaffold.firebaseapp.com)
 
@@ -21,6 +25,7 @@
 * Fully responsive.
 * Add to home screen feature (manifest.json).
 * Hot reloading (HMR).
+* Lighthouse score 90+/100.
 * Travis CI integration.
 * Firebase deployment.
 

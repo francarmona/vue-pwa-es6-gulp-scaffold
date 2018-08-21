@@ -17,7 +17,6 @@ export default {
     padding: 30px 0;
     background-color: color($colors, 'light');
     p {
-      color: lighten($text-color, 25%);
       font-size: .95rem;
     }
   }
