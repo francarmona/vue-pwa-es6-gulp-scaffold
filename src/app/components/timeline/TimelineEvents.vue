@@ -78,9 +78,9 @@ export default {
         position: relative;
         border-radius: 50%;
         border: 2px solid;
-        height: 160px;
-        width: 160px;
-        line-height: 160px;
+        height: 150px;
+        width: 150px;
+        line-height: 150px;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
