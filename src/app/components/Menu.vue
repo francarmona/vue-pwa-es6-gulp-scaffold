@@ -10,13 +10,14 @@
 
 <script>
 
+import { mapGetters } from 'vuex';
 export default {
   name: 'Menu',
   computed: {
-    sideNavOpened() {
-      return this.$store.state.navigation.sideNav.opened;
-    }
-  },
+    ...mapGetters('sideNav', {
+      sideNavOpened: 'sideNavOpened'
+    })
+  }
 }
 </script>
 
@@ -53,6 +54,7 @@ export default {
   @media screen and (max-width: $sm-breakpoint) {
     nav {
       width: 300px;
+      z-index: 9999;
       height: calc(100% - #{$header-height});
       background-color: #fbfbfb;
       border: 1px solid #eee;

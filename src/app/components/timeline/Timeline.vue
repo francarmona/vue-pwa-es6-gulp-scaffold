@@ -1,23 +1,19 @@
 <template>
   <div class="time-line">
     <div class="time-line-bar"></div>
-    <div v-for="group in groups" class="row group">
+    <div v-for="(group, index) in groupsProcessed" class="row group">
       <div class="col-sm-12">
-        <div class="col-sm-12 events-group bottom-padded">
+        <div class="col-sm-12 events-group" v-bind:style="{ padding: index === 0 ? '0 0 2.5rem 0' : ''}">
           <span>{{ group.groupTitle }}</span>
         </div>
-        <div class="row" v-for="(event, index) in group.events">
-          <article class="col-sm-12 col-md-2 event" v-bind:class="[index % 2 === 0 ? 'offset-md-3' : 'offset-md-7']">
-            <h3 class="text-center event-title">{{ event.title }}</h3>
-            <a class="event-icon" v-bind:class="[index % 2 === 0 ? 'odd' : 'even']" v-bind:style="{ backgroundImage: `url('${event.image}')`, color: event.borderColor }"></a>
-          </article>
-        </div>
+        <TimelineEvents v-bind:events="group.events"></TimelineEvents>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import TimelineEvents from './TimelineEvents.vue';
 export default {
   name: 'Timeline',
   props: {
@@ -25,7 +21,21 @@ export default {
       type: Array,
       required: true
     }
-  }
+  },
+  computed: {
+    groupsProcessed() {
+      let eventCounter = 0;
+      return this.groups.map((group) => {
+        const events = group.events.map((event) => {
+          const parity = eventCounter % 2 === 0 ? 'even' : 'odd';
+          eventCounter++;
+          return Object.assign({}, event, { parity });
+        });
+        return Object.assign({}, group, { events: events});
+      });
+    }
+  },
+  components: {TimelineEvents}
 }
 </script>
 
@@ -54,48 +64,7 @@ export default {
       }
       z-index: 9999;
       text-align: center;
-    }
-
-    %event-icon-before {
-      font-family: 'Material Icons';
-      font-size: 90px;
-      z-index: -1;
-      content:"\e55f";
-      position: absolute;
-    }
-
-    .event {
-      padding-bottom: 2.5rem;
-      .event-icon {
-        display: block;
-        margin: 0 auto;
-        position: relative;
-        border-radius: 50%;
-        border: 2px solid;
-        height: 160px;
-        width: 160px;
-        line-height: 160px;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        &.odd::before {
-          @extend %event-icon-before;
-          transform: rotate(-90deg);
-          -webkit-transform: rotate(-90deg);
-          -ms-transform: rotate(-90deg);
-          right: -40px;
-        }
-        &.even::before {
-          @extend %event-icon-before;
-          transform: rotate(90deg);
-          -webkit-transform: rotate(90deg);
-          -ms-transform: rotate(90deg);
-          left: -40px;
-        }
-      }
-      .event-title {
-        color: #333;
-      }
+      padding: 2.5rem 0;
     }
   }
 </style>

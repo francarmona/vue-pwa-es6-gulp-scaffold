@@ -1,4 +1,0 @@
-
-export const MUTATION_TYPES = {
-  TOGGLE_SIDE_NAV: 'TOGGLE_SIDE_NAV'
-};

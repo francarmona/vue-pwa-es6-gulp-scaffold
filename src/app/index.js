@@ -2,11 +2,10 @@ import Vue from 'vue';
 import App from './App.vue';
 import store from './store';
 import router from './router';
-import { MUTATION_TYPES } from './store/types';
 
 router.afterEach(() => {
-  if(store.state.navigation.sideNav.opened) {
-    store.commit(MUTATION_TYPES.TOGGLE_SIDE_NAV);
+  if(store.state.sideNav.opened) {
+    store.commit('sideNav/toggleSideNav');
   }
 });
 

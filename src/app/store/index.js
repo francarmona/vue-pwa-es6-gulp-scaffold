@@ -1,17 +1,14 @@
 
 import Vue from 'vue';
 import Vuex from 'vuex';
-import mutations from './mutations';
+import sideNav from './modules/sideNav';
+import timeline from './modules/timeline';
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {
-    navigation: {
-      sideNav: {
-        opened: false
-      }
-    }
-  },
-  mutations
+  modules: {
+    sideNav,
+    timeline
+  }
 });
