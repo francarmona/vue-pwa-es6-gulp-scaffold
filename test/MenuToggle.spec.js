@@ -1,7 +1,6 @@
 import { shallowMount, createLocalVue } from '@vue/test-utils';
 import Vuex from 'vuex';
 import MenuToggle from '@/app/components/MenuToggle.vue';
-import {MUTATION_TYPES} from "@/app/store/types";
 import store from '@/app/store';
 
 const localVue = createLocalVue();
@@ -11,32 +10,38 @@ describe('MenuToggle', () => {
   let mockStore;
   let state;
   let mutations;
+  let getters;
 
   beforeEach(() => {
     state = {
-      navigation: {
-        sideNav: {
-          opened: false
-        }
-      }
+      opened: false
     };
     mutations = {
-      [MUTATION_TYPES.TOGGLE_SIDE_NAV]: jest.fn()
+      toggleSideNav: jest.fn()
+    };
+    getters = {
+      sideNavOpened: jest.fn()
     };
     mockStore = new Vuex.Store({
-      state,
-      mutations
+      modules: {
+        sideNav: {
+          namespaced: true,
+          state,
+          mutations,
+          getters
+        }
+      }
     });
   });
 
-  it('call store mutation "TOGGLE_SIDE_NAV" when button is clicked', () => {
+  it('call store mutation "toggleSideNav" when button is clicked', () => {
     const wrapper = shallowMount(MenuToggle, {
       localVue,
       store: mockStore
     });
     const toggleButton = wrapper.find('.menu-toggle');
     toggleButton.trigger('click');
-    expect(mutations[MUTATION_TYPES.TOGGLE_SIDE_NAV]).toHaveBeenCalled();
+    expect(mutations.toggleSideNav).toHaveBeenCalled();
   });
 
   it('toggle sidenav opened when button is clicked', () => {
@@ -45,8 +50,8 @@ describe('MenuToggle', () => {
       store
     });
     const toggleButton = wrapper.find('.menu-toggle');
-    expect(store.state.navigation.sideNav.opened).toBe(false);
+    expect(store.state.sideNav.opened).toBe(false);
     toggleButton.trigger('click');
-    expect(store.state.navigation.sideNav.opened).toBe(true);
+    expect(store.state.sideNav.opened).toBe(true);
   });
 });

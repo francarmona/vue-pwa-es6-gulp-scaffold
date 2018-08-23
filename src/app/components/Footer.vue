@@ -14,6 +14,10 @@ export default {
   @import '../scss/theme/variables.scss';
   @import '../scss/functions.scss';
   footer {
+    position: absolute;
+    bottom: 0;
+    height: $footer-height;
+    width: 100%;
     padding: 30px 0;
     background-color: color($colors, 'light');
     p {

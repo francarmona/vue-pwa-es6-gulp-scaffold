@@ -1,15 +1,14 @@
 import { createLocalVue } from '@vue/test-utils';
 import Vuex from 'vuex';
 import store from '@/app/store';
-import { MUTATION_TYPES } from "../src/app/store/types";
 
 const localVue = createLocalVue();
 localVue.use(Vuex);
 
-describe('Store', () => {
+describe('Store - SideNav module', () => {
   it('toggle sidenav opened', () => {
-    expect(store.state.navigation.sideNav.opened).toBe(false);
-    store.commit(MUTATION_TYPES.TOGGLE_SIDE_NAV);
-    expect(store.state.navigation.sideNav.opened).toBe(true);
+    expect(store.state.sideNav.opened).toBe(false);
+    store.commit('sideNav/toggleSideNav');
+    expect(store.state.sideNav.opened).toBe(true);
   });
 });
