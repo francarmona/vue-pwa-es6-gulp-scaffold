@@ -4,10 +4,24 @@
       <div class="col-md-12">
         <div class="row event" v-bind:class="[eventSelected == event ? 'active' : '', event.parity]">
           <article class="col-sm-12 col-md-3 event-header" v-bind:class="getHeaderClass(event)">
-            <h3 class="text-center event-title">{{ event.title }}</h3>
-            <a class="event-icon" v-on:click="selectEvent(event)" v-bind:style="{ backgroundImage: `url('${event.image}')`, color: event.borderColor }"></a>
+            <h2 class="text-center event-title">{{ event.title }}</h2>
+            <div class="event-icon-wrapper">
+              <a class="event-icon" v-on:click="selectEvent(event)" v-bind:style="{ backgroundImage: `url('${event.image}')`, color: event.borderColor }"></a>
+              <i class="material-icons event-icon-arrow hidden-sm" v-bind:style="{ color: event.borderColor }">place</i>
+            </div>
           </article>
-          <article class="col-md-9 event-detail" v-bind:class="getDetailClass(event)" v-show="eventSelected == event">test</article>
+          <article class="col-md-9 event-detail" v-bind:class="getDetailClass(event)" v-show="eventSelected == event">
+            <h3>
+              <em>"{{ event.subtitle }}"</em>
+            </h3>
+            <div class="event-detail-description" v-html="event.body"></div>
+            <div class="event-detail-tags">
+              <span class="label" v-for="tag in event.tags">
+                <img v-bind:src="tag.image">
+                {{ tag.title }}
+              </span>
+            </div>
+          </article>
         </div>
       </div>
     </div>
@@ -32,6 +46,9 @@ export default {
   },
   methods: {
     selectEvent(event) {
+      if(this.$mq != 'lg'){
+        return;
+      }
       if(this.alreadySelected(event)){
         this.$store.commit('timeline/deselectEvent');
         return;
@@ -57,48 +74,67 @@ export default {
 <style lang="scss" scoped>
   @import '../../scss/theme/variables';
   @import '../../scss/functions';
-  %event-icon-before {
-    font-family: 'Material Icons';
+
+  %event-icon-arrow {
     font-size: 90px;
-    z-index: -1;
-    content:"\e55f";
     position: absolute;
+    z-index: -1;
+  }
+
+  @media screen and (min-width: $md-breakpoint) {
+    .event {
+      overflow: hidden;
+    }
   }
 
   .event {
-    overflow: hidden;
     .event-header {
       padding-bottom: 2.5rem;
       transition: all .3s ease-in-out;
-      .event-icon {
-        transition: all .3s ease-in-out;
-        display: block;
-        cursor: pointer;
-        margin: 0 auto;
+      .event-icon-wrapper {
         position: relative;
-        border-radius: 50%;
-        border: 2px solid;
-        height: 150px;
-        width: 150px;
-        line-height: 150px;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
+        .event-icon {
+          transition: all .3s ease-in-out;
+          display: block;
+          margin: 0 auto;
+          position: relative;
+          border-radius: 50%;
+          border: 2px solid;
+          height: 150px;
+          width: 150px;
+          line-height: 150px;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+        .event-icon-arrow {
+          @extend %event-icon-arrow;
+          transform: rotate(90deg);
+          top: calc(150px/2 - 90px/2);
+        }
       }
+
       .event-title {
         color: #333;
+        font-weight: normal;
+      }
+    }
+
+    .event-detail {
+      h3 {
+        font-weight: 100;
       }
     }
 
     &.even {
       .event-header {
-        .event-icon {
-          &::before {
-            @extend %event-icon-before;
+        .event-icon-wrapper {
+          .event-icon-arrow {
+            transition: all .3s ease-in-out;
             transform: rotate(-90deg);
             -webkit-transform: rotate(-90deg);
             -ms-transform: rotate(-90deg);
-            right: -40px;
+            right: 35px;
           }
         }
       }
@@ -106,13 +142,13 @@ export default {
 
     &.odd {
       .event-header {
-        .event-icon {
-          &::before {
-            @extend %event-icon-before;
+        .event-icon-wrapper {
+          .event-icon-arrow {
+            transition: all .3s ease-in-out;
             transform: rotate(90deg);
             -webkit-transform: rotate(90deg);
             -ms-transform: rotate(90deg);
-            left: -40px;
+            left: 35px;
           }
         }
       }
@@ -127,10 +163,12 @@ export default {
         z-index: 9999;
       }
 
-      .event-icon {
-        transform: scale(1.7);
-        opacity: .6;
-        &::before {
+      .event-icon-wrapper {
+        .event-icon {
+          transform: scale(2);
+          opacity: .6;
+        }
+        .event-icon-arrow {
           display: none;
         }
       }
@@ -142,6 +180,9 @@ export default {
         .event-title {
           left: 3.5rem;
         }
+        .event-detail {
+          padding: 1rem 5rem 1rem 0;
+        }
       }
 
       &.odd {
@@ -151,8 +192,46 @@ export default {
         .event-title {
           right: 3.5rem;
         }
+        .event-detail {
+          padding: 1rem 0 1rem 5rem;
+        }
       }
     }
 
+    .event-detail {
+      .event-detail-tags {
+        .label {
+          background-color: color($colors, 'light');;
+          border-radius: 3px;
+          padding: 0.3em 0.9em;
+          margin: 0 0.5em 0.5em 0;
+          font-size: .95rem;
+        }
+        img {
+          vertical-align: middle;
+          max-width: 1.25rem;
+          height: auto;
+        }
+      }
+    }
+
+    @media screen and (min-width: $md-breakpoint) {
+      .event-icon {
+        cursor: pointer;
+      }
+    }
+
+    @media screen and (max-width: $md-breakpoint - 1) {
+      & {
+        padding-top: 3rem;
+      }
+      .event-detail {
+        display: block !important;
+        clear: both;
+        h3 {
+          text-align: center;
+        }
+      }
+    }
   }
 </style>

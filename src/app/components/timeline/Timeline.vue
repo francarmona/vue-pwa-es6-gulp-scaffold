@@ -48,6 +48,7 @@ export default {
       position: absolute;
       left: 50%;
       background-color: #ddd;
+      opacity: .5;
       min-height: 100%;
     }
 

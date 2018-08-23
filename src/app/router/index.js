@@ -26,7 +26,7 @@ export default new Router({
     },
     {
       path: '/page4',
-      name: 'Page 4',
+      name: 'Timeline',
       component: Page4
     }
   ]

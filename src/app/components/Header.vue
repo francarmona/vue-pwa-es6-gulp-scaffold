@@ -19,6 +19,7 @@ export default {
 
 <style lang="scss" scoped>
   @import '../scss/theme/variables.scss';
+  @import '../scss/functions.scss';
   .brand {
     text-align: center;
     padding: $padding-vertical-base 0 $padding-vertical-base 0;
@@ -27,7 +28,7 @@ export default {
     font-size: 1.4rem;
   }
 
-  @media screen and (max-width: $sm-breakpoint) {
+  @media screen and (max-width: $md-breakpoint - 1) {
     header {
       height: $header-height;
     }

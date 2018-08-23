@@ -51,10 +51,10 @@ export default {
     }
   }
 
-  @media screen and (max-width: $sm-breakpoint) {
+  @media screen and (max-width: $md-breakpoint - 1) {
     nav {
       width: 300px;
-      z-index: 9999;
+      z-index: 99999;
       height: calc(100% - #{$header-height});
       background-color: #fbfbfb;
       border: 1px solid #eee;

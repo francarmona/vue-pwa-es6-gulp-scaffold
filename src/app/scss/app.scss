@@ -49,6 +49,10 @@ header {
   box-shadow: 0 0 1px rgba(0,0,0,0.25);
 }
 
+main {
+  padding: 0 2rem;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -722,5 +726,23 @@ header {
 
   .offset-lg-11 {
     margin-left: 91.666667%;
+  }
+}
+
+@media screen and (max-width: $md-breakpoint - 1) {
+  .hidden-sm {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: $md-breakpoint) and (max-width: $lg-breakpoint - 1) {
+  .hidden-md {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: $lg-breakpoint) {
+  .hidden-lg {
+    display: none !important;
   }
 }
