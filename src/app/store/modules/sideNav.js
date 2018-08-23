@@ -10,7 +10,7 @@ const mutations = {
 };
 
 const getters = {
-  sideNavOpened: state => {
+  sideNavOpened(state) {
     return state.opened;
   }
 };
