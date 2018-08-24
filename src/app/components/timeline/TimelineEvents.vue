@@ -201,7 +201,8 @@ export default {
     .event-detail {
       .event-detail-tags {
         .label {
-          background-color: color($colors, 'light');;
+          background-color: color($colors, 'light');
+          display: inline-block;
           border-radius: 3px;
           padding: 0.3em 0.9em;
           margin: 0 0.5em 0.5em 0;
@@ -209,8 +210,7 @@ export default {
         }
         img {
           vertical-align: middle;
-          max-width: 1.25rem;
-          height: auto;
+          width: 1.25rem;
         }
       }
     }
