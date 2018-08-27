@@ -26,11 +26,11 @@ export default {
     groupsProcessed() {
       let eventCounter = 0;
       return this.groups.map((group) => {
-        const events = group.events.map((event) => {
+        const events = group.hasOwnProperty('events') ? group.events.map((event) => {
           const parity = eventCounter % 2 === 0 ? 'even' : 'odd';
           eventCounter++;
           return Object.assign({}, event, { parity });
-        });
+        }) : [];
         return Object.assign({}, group, { events: events});
       });
     }
